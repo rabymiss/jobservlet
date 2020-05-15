@@ -21,7 +21,7 @@ public class SaveJobAll {
     public RespVo login(@RequestBody MessageAll messageAll) {
 
         RespVo respVo = new RespVo();
-        respVo.setErrmsg("chenggong ");
+        respVo.setErrmsg("成功");
         respVo.setErrno(200);
         InputStream inputStream = SaveJobAll.class.getClassLoader().getResourceAsStream("config.xml");
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
@@ -37,9 +37,10 @@ public class SaveJobAll {
         jobMessage.setJobName(messageAll.getJobName());
         jobMessage.setJobConditionTwo(messageAll.getConditionTwo());
         jobMessage.setJobConditionOne(messageAll.getConditionOne());
+        jobMessage.setImage(messageAll.getCpnImage());
+        jobMessage.setCpnName(messageAll.getCpnName1());
         jobRepository.update(jobMessage);
         jobMessageAll.update(messageAll);
-
         System.out.println("收到的信息------------------"+messageAll);
         sqlSession.commit();
         sqlSession.close();

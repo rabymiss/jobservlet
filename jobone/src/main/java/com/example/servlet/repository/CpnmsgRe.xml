@@ -15,7 +15,7 @@
     <update id="update" parameterType="com.example.servlet.entity.CpnMsgEn">
 
 
-update cpn_msg set username=#{username},nickname=#{nickname},burthday=#{burthday},email=#{email},phonenumber=#{phonenumber},addressp=#{addressp},showyou=#{showyou} where workin=#{workin}
+update cpn_msg set  icon=#{icon} ,  username=#{username},nickname=#{nickname},burthday=#{burthday},email=#{email},phonenumber=#{phonenumber},addressp=#{addressp},showyou=#{showyou} where workin=#{workin}
 
     </update>
 </mapper>

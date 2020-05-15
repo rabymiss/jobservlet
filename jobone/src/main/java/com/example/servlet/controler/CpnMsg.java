@@ -28,9 +28,8 @@ public class CpnMsg {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         CpnmsgDao cpnmsgDao=sqlSession.getMapper(CpnmsgDao.class);
 
-
         cpnmsgDao.update(cpnMsgEn);
-     System.out.println("更新cpn"+cpnMsgEn);
+        System.out.println("更新cpn"+cpnMsgEn);
         sqlSession.commit();
         sqlSession.close();
 
@@ -47,12 +46,11 @@ public class CpnMsg {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         CpnmsgDao cpnmsgDao=sqlSession.getMapper(CpnmsgDao.class);
 
-List<CpnMsgEn>list=new ArrayList<>();
+       List<CpnMsgEn>list=new ArrayList<>();
        list= cpnmsgDao.findcpn(cpnMsgEn);
         System.out.println("搜索"+list);
         sqlSession.commit();
         sqlSession.close();
-
         return list;
     }
 

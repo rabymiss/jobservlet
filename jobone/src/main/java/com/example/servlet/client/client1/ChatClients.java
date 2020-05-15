@@ -43,7 +43,6 @@ public class ChatClients {
 //    }
     public static void main(String[] args){
 
-
-new ChatClients().connect();
+            new ChatClients().connect();
     }
 }

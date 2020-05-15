@@ -107,11 +107,11 @@ for (MultipartFile multipartFile:files) {
 User user=new User();
 user.setUsername(cpnMsgEn.getIcon());
 
-        cpnmsgDao.save(cpnMsgEn);
-        System.out.println("上传cpn"+cpnMsgEn);
+        cpnmsgDao.update(cpnMsgEn);
+        System.out.println("更新cpn"+cpnMsgEn);
 sqlSession.commit();
 sqlSession.close();
-
+        System.out.println("返回的------------"+user);
 return user;
 
     }
@@ -158,8 +158,8 @@ datacook.clear();
         cpnMsgEn.setIcon(datacook.get(0));
         cpnMsgEn.setWorkin(str);
         file2.setF1(datacook.get(0));
-fileDao.save(file2);
-cpnmsgDao.save(cpnMsgEn);
+        fileDao.save(file2);
+        cpnmsgDao.update(cpnMsgEn);
         sqlSession.commit();
         sqlSession.close();
 
