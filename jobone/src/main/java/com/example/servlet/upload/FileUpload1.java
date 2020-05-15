@@ -35,7 +35,7 @@ import java.util.UUID;
 @RestController
 public class FileUpload1 {
 
-    private final String fileBaseDirect="C:/Users/24542/Desktop/Job/renren-security/photo/";
+    private final String fileBaseDirect="";
     private  final Path fileBasePath1;
 // File file=new File();
     private List<String> data=new ArrayList<String>();

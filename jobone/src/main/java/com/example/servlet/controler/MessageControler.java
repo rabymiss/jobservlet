@@ -58,7 +58,7 @@ public class MessageControler {
         request.setSysAction("SendSms");
         request.putQueryParameter("RegionId", "cn-hangzhou");
         request.putQueryParameter("PhoneNumbers", user.getUsername());
-        request.putQueryParameter("SignName", "美食时间");
+        request.putQueryParameter("SignName", "蓝汛");
         request.putQueryParameter("TemplateCode", "SMS_189613123");
         request.putQueryParameter("TemplateParam", "{\"code\":\""+str+"\"}");
         try {
@@ -148,7 +148,6 @@ public class MessageControler {
         User user2 = new User(count.toString(), count.toString());
 
         if (count==1){
-            System.out.println("chufa");
             userRepository.deleteusertttttuu(user);
             sqlSession.commit();
             sqlSession.close();

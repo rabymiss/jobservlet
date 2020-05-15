@@ -15,7 +15,7 @@ public class ChatClients {
     try{
 
         connection_state=true;
-        socket=new Socket("172.20.10.3",8081);
+        socket=new Socket("192.168.0.104",1000);
         os=socket.getOutputStream() ;
         new Thread(new ReadingTask(socket.getInputStream())).start();
         new Thread(new WriteTask(os,socket)).start();
@@ -43,18 +43,7 @@ public class ChatClients {
 //    }
     public static void main(String[] args){
 
-//        while (!connection_state){
-//
-//
-//            connect();
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//connect();
+
 new ChatClients().connect();
     }
 }
