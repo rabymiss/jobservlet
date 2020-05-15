@@ -13,6 +13,8 @@ public class CpnMsgEn {
     private String email;
     private String phonenumber;
     private String addressp;
+
+    //zhanghao
     private String workin;
     private String showyou;
 }

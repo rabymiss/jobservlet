@@ -45,7 +45,7 @@ public class FindJob {
         JobMessage jobMessage=new JobMessage();
         jobMessage.setUsername(jobReturn1.getErrmsg());
         List<JobMessage> list = loginRepository.findjobby(jobMessage);
-        System.out.println(list);
+        System.out.println("找到------------"+list);
         jobReturn.setData(list);
         return jobReturn;
     }

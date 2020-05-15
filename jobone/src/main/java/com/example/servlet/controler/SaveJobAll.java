@@ -28,10 +28,11 @@ public class SaveJobAll {
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
         JobMessageAll jobMessageAll = sqlSession.getMapper(JobMessageAll.class);
+
         JobRepository jobRepository=sqlSession.getMapper(JobRepository.class);
         JobMessage jobMessage=new JobMessage();
         jobMessage.setUuid(messageAll.getGood1());
-        jobMessage.setUsername(messageAll.getCpnName1());
+        jobMessage.setUsername(messageAll.getGood2());
         jobMessage.setJobPay(messageAll.getJobPay());
         jobMessage.setJobName(messageAll.getJobName());
         jobMessage.setJobConditionTwo(messageAll.getConditionTwo());
@@ -39,7 +40,7 @@ public class SaveJobAll {
         jobRepository.update(jobMessage);
         jobMessageAll.update(messageAll);
 
-        System.out.println("add------------------"+messageAll);
+        System.out.println("收到的信息------------------"+messageAll);
         sqlSession.commit();
         sqlSession.close();
         return respVo;

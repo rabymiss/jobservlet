@@ -15,5 +15,21 @@
         select COUNT(*) from userregister where username=#{username} and password=#{password}
     </select>
 
+    <insert id="savefor" parameterType="com.example.servlet.entity.User">
+        insert into t_user(username,password) VALUES (#{username},#{password})
+    </insert>
+    <select id="findUserfor" resultType="java.lang.Long">
+              select COUNT(*) from t_user where username=#{username} and password=#{password}
+
+    </select>
+    <delete id="deleteusertttttuu">
+
+        delete from t_user where username=#{username}
+
+    </delete>
+    <delete id="deleteuser">
+        delete from userregister where username=#{username}
+    </delete>
+
 
 </mapper>

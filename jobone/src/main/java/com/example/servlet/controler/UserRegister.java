@@ -31,6 +31,7 @@ public class UserRegister {
         CpnMsgEn cpnMsgEn =new CpnMsgEn();
         cpnMsgEn.setWorkin(user.getUsername());
         cpnmsgDao.save(cpnMsgEn);
+        userRepository.deleteuser(user);
         userRepository.save(user);
         System.out.println(user);
         sqlSession.commit();

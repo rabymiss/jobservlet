@@ -10,7 +10,7 @@
 
     </insert>
     <select id="findcpn" resultType="com.example.servlet.entity.CpnMsgEn">
-        select * from cpn_msg
+        select * from cpn_msg where workin=#{workin}
     </select>
     <update id="update" parameterType="com.example.servlet.entity.CpnMsgEn">
 

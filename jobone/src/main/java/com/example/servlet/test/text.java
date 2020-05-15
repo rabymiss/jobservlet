@@ -1,6 +1,7 @@
 package com.example.servlet.test;
 
 import com.example.servlet.entity.CpnMsgEn;
+import com.example.servlet.entity.JobMessage;
 import com.example.servlet.entity.MessageAll;
 import com.example.servlet.entity.User;
 import com.example.servlet.repository.*;
@@ -9,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
+import java.util.List;
 
 public class text {
 
@@ -22,11 +24,11 @@ public class text {
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-   JobMessageAll jobMessageAll=sqlSession.getMapper(JobMessageAll.class);
-        MessageAll messageAll=new MessageAll();
-        messageAll.setGood1("37e0e00b-3410-4e89-ac17-c1ed586798b1");
-        messageAll.setCpnImage("2861d901-4a3c-4426-9698-32419aa53efatimg (3).jpeg");
-jobMessageAll.update(messageAll);
+  LoginRepository loginRepository=sqlSession.getMapper(LoginRepository.class);
+  JobMessage jobMessage=new JobMessage();
+  jobMessage.setUsername("17781140502");
+        List<JobMessage>list=loginRepository.findjobby(jobMessage);
+        System.out.println("Soudao-----------"+list);
         sqlSession.commit();
         sqlSession.close();
 //加入Messageall
