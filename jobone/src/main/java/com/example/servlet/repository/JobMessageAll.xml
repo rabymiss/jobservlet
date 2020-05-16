@@ -20,4 +20,7 @@
 
         delete from job_message_all where good1=#{good1}
     </delete>
+    <select id="findby" resultType="com.example.servlet.entity.MessageAll">
+        select * from  job_message_all where good1=#{good1}
+    </select>
 </mapper>

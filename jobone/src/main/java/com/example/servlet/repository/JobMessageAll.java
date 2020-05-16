@@ -11,5 +11,6 @@ public interface JobMessageAll {
     public int sava(MessageAll messageAll);
     public long update(MessageAll messageAll);
     public long deleteby(MessageAll messageAll);
+    public MessageAll findby(MessageAll messageAll);
 
 }

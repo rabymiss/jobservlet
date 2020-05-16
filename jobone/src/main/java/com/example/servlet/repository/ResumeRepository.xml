@@ -4,12 +4,32 @@
 
 <mapper namespace="com.example.servlet.repository.ResumeRepository">
 
-    <select id="findAll" parameterType="com.example.servlet.entity.ResumeEntity"
-            resultType="com.example.servlet.entity.ResumeEntity">
-        select    youname,birthday,politics,
-            email,phone,addressWork,ifMary,qwer,
-            teached,workming,showbyshelf  from resume
+
+
+
+
+
+
+
+    <select id="findAllby" parameterType="com.example.servlet.entity.Resume"
+            resultType="com.example.servlet.entity.Resume">
+        select   * from resume where cpnid=#{cpnid}
     </select>
+    <insert id="save" parameterType="com.example.servlet.entity.Resume">
+        insert into resume (youname,birthday,politics,email,phone,addresswork,ifmary,qwer,
+        teached,workming,showbyshelf,uuid,cpnid,t1)  values
+         (#{youname},#{birthday},#{politics},#{email},#{phone},#{addresswork},#{ifmary},#{qwer},
+#{teached},
+#{workming},
+#{showbyshelf},
+#{uuid},
+#{cpnid},
+#{t1})
+
+
+
+
+    </insert>
 
 
 </mapper>
